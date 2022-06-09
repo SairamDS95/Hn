@@ -1,0 +1,92 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-06-09T09:14:53.320Z",
+        "line": 3,
+        "name": "Validate search by searching for mobile",
+        "description": "",
+        "id": "validate-the-search-function;validate-search-by-searching-for-mobile",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 36466880800,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is in the home page",
+            "match": {
+              "location": "SearchStepDef.user_is_in_the_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 613234500,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User enters keyword in the search field",
+            "match": {
+              "location": "SearchStepDef.user_enters_keyword_in_the_search_field(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Mobile",
+                  "Keyboard"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 19687975300,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User click the search button",
+            "match": {
+              "location": "SearchStepDef.user_click_the_search_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13894764200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User opens the first product in the new tab",
+            "match": {
+              "location": "SearchStepDef.user_opens_the_first_product_in_the_new_tab()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 178687000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User takes a screenshot",
+            "match": {
+              "location": "SearchStepDef.user_takes_a_screenshot()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Validate the Search function",
+    "description": "",
+    "id": "validate-the-search-function",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/har.feature",
+    "tags": []
+  }
+]

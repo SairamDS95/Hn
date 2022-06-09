@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="71.001909">
+    <testcase classname="Validate the Search function" name="Validate search by searching for mobile" time="71.001909">
+        <system-out><![CDATA[Given User is in the home page..............................................passed
+When User enters keyword in the search field................................passed
+And User click the search button............................................passed
+And User opens the first product in the new tab.............................passed
+Then User takes a screenshot................................................passed
+]]></system-out>
+    </testcase>
+</testsuite>

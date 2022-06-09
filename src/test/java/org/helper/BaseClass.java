@@ -25,6 +25,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -36,6 +37,7 @@ public class BaseClass {
 	public static TakesScreenshot ts;
 	public static JavascriptExecutor js;
 	public static Robot r;
+	public static Select s;
 	
 	public static void chromeBrowser() {
 		
@@ -118,7 +120,7 @@ public class BaseClass {
 	public static void getSnap(String fileName) throws IOException {
 		ts = (TakesScreenshot)driver;
 		File temp = ts.getScreenshotAs(OutputType.FILE); 
-		File perm = new	File("C:\\Users\\HP\\eclipse-workspace\\Demo\\Screenshots"+fileName+".png");
+		File perm = new	File("C:\\Users\\HP\\eclipse-workspace\\HarveyNorman\\Screenshots\\"+fileName+".png");
 		FileUtils.copyFile(temp, perm);
 	}
 	
@@ -190,8 +192,18 @@ public class BaseClass {
 		r.keyRelease(KeyEvent.VK_V);
 	}
 	
+	public static void dropDownIndex(WebElement ele, int index) {
+		s = new Select(ele);
+		s.selectByIndex(index);
+	}
+	
+	public static void dropDownName(WebElement ele, String name) {
+		s = new Select(ele);
+		s.selectByValue(name);
+	}
+	
 	public static String readFromExcel(String fileName, String shName, int rowNo, int cellNo) throws IOException {
-		File f = new File("C:\\Users\\HP\\eclipse-workspace\\Demo\\External files\\"+fileName+".xlsx");
+		File f = new File("C:\\Users\\HP\\eclipse-workspace\\HarveyNorman\\External Files\\"+fileName+".xlsx");
 		FileInputStream fin = new FileInputStream(f);
 		Workbook book = new XSSFWorkbook(fin);
 		Sheet sh = book.getSheet(shName);
@@ -224,7 +236,7 @@ public class BaseClass {
 	}
 	
 	public static void createExcel(String fileName, String shName) {
-		File f = new File("C:\\Users\\HP\\eclipse-workspace\\Demo\\External files\\"+fileName+".xlsx");
+		File f = new File("C:\\Users\\HP\\eclipse-workspace\\HarveyNorman\\External Files\\"+fileName+".xlsx");
 		Workbook book = new XSSFWorkbook();
 		
 		Sheet sh = book.createSheet(shName);
